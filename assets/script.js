@@ -433,7 +433,9 @@ function initMobileNav() {
   const setOpen = (open) => {
     document.body.classList.toggle('nav-open', open);
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Tutup menu' : 'Buka menu');
+    const dict = (window.UNR_I18N && window.UNR_I18N[document.documentElement.lang]) || (window.UNR_I18N && window.UNR_I18N.id);
+    const label = dict ? (open ? dict.cta.close : dict.cta.menu) : (open ? 'Tutup menu' : 'Buka menu');
+    toggle.setAttribute('aria-label', label);
   };
 
   toggle.addEventListener('click', () => {
