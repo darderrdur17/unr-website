@@ -12,7 +12,7 @@ from the companion documents:
 No build step, no server required. Just open in a browser:
 
 1. Unzip this package.
-2. Double-click `index.html` (or `pendaftaran.html` / `tentang.html`) to open it
+2. Double-click `index.html` (or `pmb.html` / `tentang.html`) to open it
    directly in Chrome, Safari, or Edge.
 3. To see it the way a visitor would — with all fonts and interactions working —
    an internet connection is needed once, since headings/body text load from
@@ -37,7 +37,7 @@ This prototype now uses **public facts from [unr.ac.id](https://unr.ac.id)** and
 | `index.html` | Homepage |
 | `fakultas.html` | Faculties & graduate school |
 | `berita.html` | Official campus news |
-| `pendaftaran.html` | Admissions / Info Pendaftaran |
+| `pmb.html` | PMB home prototype based on pmb.unr.ac.id/home |
 | `kontak.html` | Dedicated Contact Us page (channels, form, campus photo, map) |
 | `tentang.html` | About / Visi & Misi, with the Tri Hita Karana explainer |
 | `assets/i18n.js` | Indonesian + English copy; switcher persists in localStorage |

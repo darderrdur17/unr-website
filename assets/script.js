@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initLightbox();
   initContactForm();
+  initPmbFinder();
+  initPmbLogin();
+  initPmbApply();
   initBackToTop();
   initYear();
 });
@@ -522,6 +525,119 @@ function initContactForm() {
     window.location.href = `mailto:info@unr.ac.id?subject=${subject}&body=${body}`;
     const status = form.querySelector('[data-form-status]');
     if (status) status.hidden = false;
+  });
+}
+
+function pmbDict() {
+  const lang = document.documentElement.lang === 'en' ? 'en' : 'id';
+  return (window.UNR_I18N && window.UNR_I18N[lang]) || window.UNR_I18N?.id;
+}
+
+function initPmbFinder() {
+  const form = document.querySelector('[data-pmb-finder]');
+  const tracks = document.querySelectorAll('.pmb-track');
+  const status = document.querySelector('[data-pmb-status]');
+  if (!form || !tracks.length) return;
+
+  const syncProgramOptions = () => {
+    const level = form.level.value;
+    [...form.program.options].forEach((option) => {
+      if (!option.value) {
+        option.hidden = false;
+        return;
+      }
+      const optionLevel = option.getAttribute('data-level');
+      option.hidden = Boolean(level && optionLevel && optionLevel !== level);
+    });
+    const selected = form.program.selectedOptions[0];
+    if (selected?.hidden) form.program.value = '';
+  };
+
+  const applyFilter = (scroll = true) => {
+    const level = form.level.value;
+    const program = form.program.value;
+    const system = form.system.value;
+    let visible = 0;
+
+    tracks.forEach((track) => {
+      const levels = (track.getAttribute('data-level') || '').split(',');
+      const programs = (track.getAttribute('data-program') || '').split(',');
+      const systems = (track.getAttribute('data-system') || '').split(',');
+      const matchLevel = !level || levels.includes(level);
+      const matchProgram = !program || programs.includes(program);
+      const matchSystem = !system || systems.includes(system);
+      const match = matchLevel && matchProgram && matchSystem;
+      track.hidden = !match;
+      if (match) visible += 1;
+    });
+
+    if (status) {
+      const dict = pmbDict();
+      const found = getNested(dict, 'pmb.found') || 'Jalur ditemukan';
+      const none = getNested(dict, 'pmb.none') || 'Tidak ada jalur yang cocok. Ubah filter.';
+      status.hidden = false;
+      status.textContent = visible ? `${visible} ${found}` : none;
+    }
+
+    if (scroll) {
+      document.getElementById('jalur')?.scrollIntoView({
+        behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
+  form.level.addEventListener('change', syncProgramOptions);
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    applyFilter(true);
+  });
+
+  document.querySelectorAll('[data-pmb-show-tracks]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      form.level.value = btn.getAttribute('data-pmb-show-tracks') || '';
+      form.program.value = '';
+      form.system.value = '';
+      syncProgramOptions();
+      applyFilter(true);
+    });
+  });
+
+  syncProgramOptions();
+}
+
+function initPmbLogin() {
+  const form = document.querySelector('[data-pmb-login]');
+  if (!form) return;
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const status = form.querySelector('[data-pmb-login-status]');
+    const id = (form.applicantId?.value || '').trim();
+    const pin = (form.pin?.value || '').trim();
+    if (!status) return;
+    const dict = pmbDict();
+    status.hidden = false;
+    status.textContent = id && pin
+      ? (getNested(dict, 'pmb.loginOk') || 'Prototype login succeeded.')
+      : (getNested(dict, 'pmb.loginNeed') || 'Enter Applicant ID and PIN.');
+  });
+}
+
+function initPmbApply() {
+  const status = document.querySelector('[data-pmb-apply-status]');
+  const buttons = document.querySelectorAll('[data-pmb-apply]');
+  if (!status || !buttons.length) return;
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const track = btn.closest('.pmb-track');
+      const title = track?.querySelector('h3')?.textContent?.trim() || '';
+      const system = track?.querySelector('.pmb-meta')?.textContent?.trim() || '';
+      const dict = pmbDict();
+      const prefix = getNested(dict, 'pmb.applyOk') || 'Prototype: selected';
+      status.hidden = false;
+      status.textContent = `${prefix} ${title} — ${system}.`;
+      status.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth', block: 'nearest' });
+    });
   });
 }
 

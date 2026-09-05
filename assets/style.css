@@ -1478,6 +1478,147 @@ img[src*="berita-spmi.jpg"] { object-position: center top; }
   .page-hero { padding: 2.4rem 0 2rem; }
 }
 
+/* -------------------------------------------------------------------------
+   PMB portal page
+   ------------------------------------------------------------------------- */
+.pmb-hero-actions { margin-top: 1.4rem; }
+.pmb-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1rem;
+}
+.pmb-panel {
+  padding: 1.35rem 1.4rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.pmb-help {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.4rem 1.5rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.pmb-help h2 { max-width: 22ch; }
+.pmb-help-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.pmb-login {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+.pmb-login label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.pmb-login input[type="text"],
+.pmb-login input[type="password"] {
+  min-height: 46px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  padding: 0.7rem 0.85rem;
+  background: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+.pmb-check {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 0.5rem !important;
+  font-weight: 500 !important;
+}
+.pmb-steps {
+  margin: 1rem 0 0;
+  padding-left: 1.15rem;
+  color: var(--ink-soft);
+}
+.pmb-steps li { margin-bottom: 0.55rem; }
+button.text-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.pmb-track .btn { margin-top: 0.85rem; }
+.pmb-apply-status { margin-top: 1rem; }
+.pmb-finder {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1.3rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.pmb-finder label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.pmb-finder select {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  padding: 0.7rem 0.85rem;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+}
+.pmb-finder button { align-self: end; min-height: 48px; }
+.pmb-finder-status {
+  margin-top: 0.9rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
+.pmb-track-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.pmb-track {
+  padding: 1.2rem 1.25rem;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+}
+.pmb-track[hidden] { display: none; }
+.pmb-status {
+  display: inline-block;
+  margin-bottom: 0.7rem;
+  padding: 0.22rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.pmb-status.open { background: rgba(63, 107, 82, 0.12); color: var(--jade); }
+.pmb-track h3 { font-size: 1.15rem; margin-bottom: 0.35rem; }
+.pmb-meta { font-weight: 600; color: var(--navy); margin-bottom: 0.25rem; }
+
+@media (max-width: 900px) {
+  .pmb-finder { grid-template-columns: 1fr 1fr; }
+  .pmb-split { grid-template-columns: 1fr; }
+  .pmb-help { flex-direction: column; align-items: stretch; }
+}
+
 @media (max-width: 640px) {
   .container { padding: 0 1.05rem; }
   .nav-cta .btn-primary { display: none; }
@@ -1535,6 +1676,13 @@ img[src*="berita-spmi.jpg"] { object-position: center top; }
   .countdown-timer { justify-content: space-between; }
   .timer-unit { flex: 1 1 22%; min-width: 0; }
   .lang-switch button { padding: 0.4rem 0.55rem; }
+  .pmb-finder { grid-template-columns: 1fr; padding: 1rem; }
+  .pmb-finder button,
+  .pmb-login .btn { width: 100%; justify-content: center; }
+  .pmb-track-grid { grid-template-columns: 1fr; }
+  .pmb-help-actions .btn,
+  .pmb-account-actions .btn,
+  .pmb-brochure-actions .btn { width: 100%; justify-content: center; }
 }
 
 @media (max-width: 420px) {

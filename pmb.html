@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Penerimaan Mahasiswa Baru — Universitas Ngurah Rai</title>
+<meta name="description" content="Prototipe portal Penerimaan Mahasiswa Baru Universitas Ngurah Rai: cari jalur, program studi, gelombang PMB Mandiri 2026/2027, dan RPL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-page="pmb">
+<a class="skip-link" href="#main" data-i18n="skip">Langsung ke konten</a>
+<div class="nav-overlay" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="container nav-row">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.png" alt="UNR" class="brand-logo">
+      <span class="wordmark">Ngurah Rai <span>UNR</span></span>
+    </a>
+    <nav aria-label="Navigasi utama">
+      <ul class="nav-links">
+        <li><a href="index.html#program" data-i18n="nav.program">Program</a></li>
+        <li><a href="fakultas.html" data-i18n="nav.fakultas">Fakultas</a></li>
+        <li><a href="pmb.html" class="active" data-i18n="nav.admisi">Admisi</a></li>
+        <li><a href="berita.html" data-i18n="nav.berita">Berita</a></li>
+        <li><a href="tentang.html" data-i18n="nav.tentang">Tentang</a></li>
+        <li><a href="kontak.html" data-i18n="nav.kontak">Kontak</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="id" class="active">ID</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+      <a href="#cari" class="btn btn-primary" data-i18n="cta.apply">Daftar Sekarang</a>
+      <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false" data-i18n-aria="cta.menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero pmb-hero">
+    <div class="container">
+      <p class="breadcrumb"><a href="index.html" data-i18n="crumb.home">Beranda</a> / <span data-i18n="crumb.pmb">PMB</span></p>
+      <p class="kicker" data-i18n="pmb.k">Penerimaan Mahasiswa Baru</p>
+      <h1 data-i18n="pmb.t">Cari jalur pendaftaran sesuai program studi yang kamu minati</h1>
+      <p data-i18n="pmb.lead">Prototipe halaman beranda PMB UNR: jenjang, program studi, sistem kuliah, gelombang yang dibuka, dan bantuan. Alur di sini menunjukkan ide — belum terhubung ke sistem pendaftaran resmi.</p>
+      <div class="hero-actions pmb-hero-actions">
+        <a href="#cari" class="btn btn-primary" data-i18n="pmb.findCta">Cari jalur pendaftaran</a>
+        <a href="#akun" class="btn btn-ghost" data-i18n="pmb.loginCta">Sudah punya akun? Masuk</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight" id="akun">
+    <div class="container pmb-split">
+      <div class="pmb-panel" data-reveal>
+        <p class="kicker" data-i18n="pmb.accountK">Sudah punya akun?</p>
+        <h2 data-i18n="pmb.accountT">Masuk untuk melanjutkan pendaftaran</h2>
+        <p data-i18n="pmb.accountP">Gunakan ID Pendaftar dan PIN. Di prototipe ini, isi kedua kolom untuk melihat alur masuk.</p>
+        <form class="pmb-login" data-pmb-login>
+          <label>
+            <span data-i18n="pmb.idLabel">ID Pendaftar</span>
+            <input type="text" name="applicantId" required autocomplete="username" data-i18n-placeholder="pmb.idPh" placeholder="Contoh: PMB2026xxxx">
+          </label>
+          <label>
+            <span data-i18n="pmb.pinLabel">PIN</span>
+            <input type="password" name="pin" required autocomplete="current-password" data-i18n-placeholder="pmb.pinPh" placeholder="PIN akun">
+          </label>
+          <label class="pmb-check">
+            <input type="checkbox" name="remember">
+            <span data-i18n="pmb.remember">Ingat saya</span>
+          </label>
+          <button class="btn btn-primary" type="submit" data-i18n="pmb.login">Masuk</button>
+          <p class="form-status" data-pmb-login-status hidden></p>
+        </form>
+      </div>
+      <div class="pmb-panel" data-reveal>
+        <p class="kicker" data-i18n="pmb.guideK">Petunjuk pendaftaran</p>
+        <h2 data-i18n="pmb.guideT">Tata cara mahasiswa baru</h2>
+        <ol class="pmb-steps">
+          <li data-i18n="pmb.step1">Pilih jenjang, program studi, dan sistem kuliah.</li>
+          <li data-i18n="pmb.step2">Temukan jalur yang sedang dibuka, lalu pilih Daftar.</li>
+          <li data-i18n="pmb.step3">Di sistem resmi, buat akun dan lengkapi data diri.</li>
+          <li data-i18n="pmb.step4">Bayar biaya daftar sesuai rentang yang tertera di jalur.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="cari">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker" data-i18n="pmb.findK">Cari jalur pendaftaran</p>
+        <h2 data-i18n="pmb.findT">Temukan jalur sesuai jenjang, program, dan sistem kuliah</h2>
+        <p data-i18n="pmb.findP">Pilihan mengikuti beranda resmi PMB. Filter menampilkan gelombang yang cocok di halaman ini.</p>
+      </div>
+      <form class="pmb-finder" data-pmb-finder data-reveal>
+        <label>
+          <span data-i18n="pmb.level">Jenjang</span>
+          <select name="level">
+            <option value="" data-i18n="pmb.levelAll">Semua jenjang</option>
+            <option value="s1">S1 — Strata 1</option>
+            <option value="prof" data-i18n="pmb.levelProf">Prof — Profesi</option>
+            <option value="s2">S2 — Strata 2</option>
+          </select>
+        </label>
+        <label>
+          <span data-i18n="pmb.program">Program studi</span>
+          <select name="program">
+            <option value="" data-i18n="pmb.programAll">Semua program</option>
+            <option value="ap" data-level="s1">S1 Administrasi Publik</option>
+            <option value="mn" data-level="s1">S1 Manajemen</option>
+            <option value="ih" data-level="s1">S1 Hukum</option>
+            <option value="ts" data-level="s1">S1 Teknik Sipil</option>
+            <option value="ar" data-level="s1">S1 Arsitektur</option>
+            <option value="ppi" data-level="prof">Program Profesi Insinyur</option>
+            <option value="mmi" data-level="s2">S2 Manajemen Inovasi</option>
+            <option value="mh" data-level="s2">S2 Hukum</option>
+            <option value="map" data-level="s2">S2 Administrasi Publik</option>
+          </select>
+        </label>
+        <label>
+          <span data-i18n="pmb.system">Sistem kuliah</span>
+          <select name="system">
+            <option value="" data-i18n="pmb.systemAll">Semua sistem</option>
+            <option value="pagi" data-i18n="pmb.sysPagi">Reguler Pagi Denpasar (A)</option>
+            <option value="sore-gianyar" data-i18n="pmb.sysSoreG">Reguler Sore Gianyar (B)</option>
+            <option value="sore-denpasar" data-i18n="pmb.sysSoreD">Reguler Sore Denpasar (A)</option>
+            <option value="rpl">RPL</option>
+          </select>
+        </label>
+        <button class="btn btn-primary" type="submit" data-i18n="pmb.search">Cari jalur pendaftaran</button>
+      </form>
+      <p class="pmb-finder-status" data-pmb-status hidden></p>
+    </div>
+  </section>
+
+  <section id="jalur" class="section-tight">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker" data-i18n="pmb.trackK">Jalur yang sedang dibuka</p>
+        <h2 data-i18n="pmb.trackT">PMB Mandiri Gelombang 3 dan RPL 2026</h2>
+        <p data-i18n="pmb.trackP">Data dari beranda dan halaman jalur resmi. Biaya adalah rentang biaya daftar, bukan SPP semester.</p>
+      </div>
+      <div class="pmb-track-grid">
+        <article class="pmb-track" data-reveal data-level="s1" data-program="ap,mn,ih,ts,ar" data-system="pagi">
+          <span class="pmb-status open" data-i18n="pmb.open">Dibuka</span>
+          <h3 data-i18n="pmb.track1">PMB S1 2026/2027 — PMB Mandiri Gelombang 3</h3>
+          <p class="pmb-meta" data-i18n="pmb.sysPagi">Reguler Pagi Denpasar (A)</p>
+          <p data-i18n="pmb.date1">6 Juni 2026 – 6 September 2026</p>
+          <p class="program-fee" data-i18n="pmb.feePagi">Biaya daftar Rp 350.000 – Rp 7.800.000</p>
+          <button class="btn btn-primary" type="button" data-pmb-apply data-i18n="cta.apply">Daftar Sekarang</button>
+        </article>
+        <article class="pmb-track" data-reveal data-reveal-delay="60" data-level="s1" data-program="ap,mn,ih,ts,ar" data-system="sore-gianyar">
+          <span class="pmb-status open" data-i18n="pmb.open">Dibuka</span>
+          <h3 data-i18n="pmb.track1">PMB S1 2026/2027 — PMB Mandiri Gelombang 3</h3>
+          <p class="pmb-meta" data-i18n="pmb.sysSoreG">Reguler Sore Gianyar (B)</p>
+          <p data-i18n="pmb.date2">6 Juni 2026 – 30 September 2026</p>
+          <p class="program-fee" data-i18n="pmb.feeSore">Biaya daftar Rp 350.000 – Rp 8.300.000</p>
+          <button class="btn btn-primary" type="button" data-pmb-apply data-i18n="cta.apply">Daftar Sekarang</button>
+        </article>
+        <article class="pmb-track" data-reveal data-reveal-delay="120" data-level="s1" data-program="ap,mn,ih,ts,ar" data-system="sore-denpasar">
+          <span class="pmb-status open" data-i18n="pmb.open">Dibuka</span>
+          <h3 data-i18n="pmb.track1">PMB S1 2026/2027 — PMB Mandiri Gelombang 3</h3>
+          <p class="pmb-meta" data-i18n="pmb.sysSoreD">Reguler Sore Denpasar (A)</p>
+          <p data-i18n="pmb.date1">6 Juni 2026 – 6 September 2026</p>
+          <p class="program-fee" data-i18n="pmb.feeSore">Biaya daftar Rp 350.000 – Rp 8.300.000</p>
+          <button class="btn btn-primary" type="button" data-pmb-apply data-i18n="cta.apply">Daftar Sekarang</button>
+        </article>
+        <article class="pmb-track" data-reveal data-reveal-delay="180" data-level="s1" data-program="ap,mn,ih,ts,ar" data-system="rpl">
+          <span class="pmb-status open" data-i18n="pmb.open">Dibuka</span>
+          <h3 data-i18n="pmb.trackRpl">RPL 2026 — RPL Perolehan SKS Gelombang 3</h3>
+          <p class="pmb-meta">RPL</p>
+          <p data-i18n="pmb.date1">6 Juni 2026 – 6 September 2026</p>
+          <p class="program-fee" data-i18n="pmb.feeSore">Biaya daftar Rp 350.000 – Rp 8.300.000</p>
+          <button class="btn btn-primary" type="button" data-pmb-apply data-i18n="cta.apply">Daftar Sekarang</button>
+        </article>
+      </div>
+      <p class="form-status pmb-apply-status" data-pmb-apply-status hidden></p>
+    </div>
+  </section>
+
+  <section id="program-pmb">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker" data-i18n="pmb.progK">Informasi program studi</p>
+        <h2 data-i18n="pmb.progT">Sembilan program aktif</h2>
+        <p data-i18n="pmb.progP">Tab jenjang mengikuti beranda resmi: S1, Profesi, dan S2.</p>
+      </div>
+      <div class="filter-row" role="group" aria-label="Filter jenjang program">
+        <button class="filter-chip active" data-filter="all" aria-pressed="true" data-i18n="prog.all">Semua</button>
+        <button class="filter-chip" data-filter="s1" aria-pressed="false">S1 — Strata 1</button>
+        <button class="filter-chip" data-filter="prof" aria-pressed="false" data-i18n="prog.prof">Profesi</button>
+        <button class="filter-chip" data-filter="s2" aria-pressed="false">S2 — Strata 2</button>
+      </div>
+      <div class="program-grid">
+        <article class="program-card" data-program="s1" data-reveal>
+          <span class="program-tag">S1 · FISHUM</span>
+          <h3 data-i18n="prog.ap">Administrasi Publik</h3>
+          <p data-i18n="pmb.accB">Akreditasi B</p>
+          <p class="program-fee" data-i18n="pmb.tracks4">Tersedia 4 jalur pendaftaran</p>
+          <button class="text-link" type="button" data-pmb-show-tracks="s1" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
+        </article>
+        <article class="program-card" data-program="s1" data-reveal data-reveal-delay="60">
+          <span class="program-tag">S1 · FEB</span>
+          <h3 data-i18n="prog.mn">Manajemen</h3>
+          <p data-i18n="pmb.accBaikSekali">Akreditasi Baik Sekali</p>
+          <p class="program-fee" data-i18n="pmb.tracks4">Tersedia 4 jalur pendaftaran</p>
+          <button class="text-link" type="button" data-pmb-show-tracks="s1" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
+        </article>
+        <article class="program-card" data-program="s1" data-reveal data-reveal-delay="120">
+          <span class="program-tag">S1 · FH</span>
+          <h3 data-i18n="prog.ih">Ilmu Hukum</h3>
+          <p data-i18n="pmb.accUnggul">Akreditasi Unggul</p>
+          <p class="program-fee" data-i18n="pmb.tracks4">Tersedia 4 jalur pendaftaran</p>
+          <button class="text-link" type="button" data-pmb-show-tracks="s1" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
+        </article>
+        <article class="program-card" data-program="s1" data-reveal data-reveal-delay="180">
+          <span class="program-tag">S1 · FST</span>
+          <h3 data-i18n="prog.ts">Teknik Sipil</h3>
+          <p data-i18n="pmb.accB">Akreditasi B</p>
+          <p class="program-fee" data-i18n="pmb.tracks2">Tersedia 2 jalur pendaftaran</p>
+          <button class="text-link" type="button" data-pmb-show-tracks="s1" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
+        </article>
+        <article class="program-card" data-program="s1" data-reveal>
+          <span class="program-tag">S1 · FST</span>
+          <h3 data-i18n="prog.ar">Arsitektur</h3>
+          <p data-i18n="pmb.accB">Akreditasi B</p>
+          <p class="program-fee" data-i18n="pmb.tracks2">Tersedia 2 jalur pendaftaran</p>
+          <button class="text-link" type="button" data-pmb-show-tracks="s1" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
+        </article>
+        <article class="program-card" data-program="prof" data-reveal data-reveal-delay="60">
+          <span class="program-tag">Profesi · FST</span>
+          <h3 data-i18n="prog.ppi">Program Profesi Insinyur</h3>
+          <p data-i18n="pmb.accBaik">Akreditasi Baik</p>
+          <p class="program-fee" data-i18n="pmb.noTrack">Belum ada jalur pendaftaran yang dibuka</p>
+          <button class="text-link" type="button" data-pmb-show-tracks="prof" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
+        </article>
+        <article class="program-card" data-program="s2" data-reveal data-reveal-delay="120">
+          <span class="program-tag">S2 · Pascasarjana</span>
+          <h3 data-i18n="prog.mmi">Magister Manajemen Inovasi</h3>
+          <p data-i18n="pmb.accBaik">Akreditasi Baik</p>
+          <p class="program-fee" data-i18n="pmb.noTrack">Belum ada jalur pendaftaran yang dibuka</p>
+          <button class="text-link" type="button" data-pmb-show-tracks="s2" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
+        </article>
+        <article class="program-card" data-program="s2" data-reveal data-reveal-delay="180">
+          <span class="program-tag">S2 · Pascasarjana</span>
+          <h3 data-i18n="prog.mh">Magister Hukum</h3>
+          <p data-i18n="pmb.accB">Akreditasi B</p>
+          <p class="program-fee" data-i18n="pmb.noTrack">Belum ada jalur pendaftaran yang dibuka</p>
+          <button class="text-link" type="button" data-pmb-show-tracks="s2" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
+        </article>
+        <article class="program-card" data-program="s2" data-reveal>
+          <span class="program-tag">S2 · Pascasarjana</span>
+          <h3 data-i18n="prog.map">Magister Administrasi Publik</h3>
+          <p data-i18n="pmb.accUnggul">Akreditasi Unggul</p>
+          <p class="program-fee" data-i18n="pmb.noTrack">Belum ada jalur pendaftaran yang dibuka</p>
+          <button class="text-link" type="button" data-pmb-show-tracks="s2" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="biaya-brosur" class="section-tight">
+    <div class="container layout-2col">
+      <div data-reveal>
+        <p class="kicker" data-i18n="pmb.brochureK">Brosur dan informasi biaya</p>
+        <h2 data-i18n="pmb.brochureT">Brosur dan rincian biaya selama kuliah</h2>
+        <p data-i18n="pmb.brochureP">Beranda resmi menampilkan brosur dan rincian biaya. Di prototipe ini, rentang biaya daftar yang dipublikasikan ditampilkan di bawah.</p>
+        <table class="fee-table active">
+          <thead>
+            <tr>
+              <th data-i18n="pmb.feeCol1">Sistem kuliah</th>
+              <th data-i18n="pmb.feeCol2">Biaya daftar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="pmb.sysPagi">Reguler Pagi Denpasar (A)</td>
+              <td data-i18n="pmb.feePagiShort">Rp 350.000 – Rp 7.800.000</td>
+            </tr>
+            <tr>
+              <td data-i18n="pmb.sysSoreD">Reguler Sore Denpasar (A)</td>
+              <td data-i18n="pmb.feeSoreShort">Rp 350.000 – Rp 8.300.000</td>
+            </tr>
+            <tr>
+              <td data-i18n="pmb.sysSoreG">Reguler Sore Gianyar (B)</td>
+              <td data-i18n="pmb.feeSoreShort">Rp 350.000 – Rp 8.300.000</td>
+            </tr>
+            <tr>
+              <td>RPL</td>
+              <td data-i18n="pmb.feeSoreShort">Rp 350.000 – Rp 8.300.000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <aside class="contact-card" data-reveal>
+        <h3 data-i18n="pmb.infoK">Informasi dan pengumuman</h3>
+        <p data-i18n="pmb.infoEmpty">Belum ada informasi dan pengumuman terbaru.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section id="bantuan">
+    <div class="container pmb-help" data-reveal>
+      <div>
+        <p class="kicker" data-i18n="pmb.helpK">Butuh bantuan?</p>
+        <h2 data-i18n="pmb.helpT">Tim PMB siap menjawab pertanyaan pendaftaran</h2>
+        <p data-i18n="pmb.helpP">Hubungi WhatsApp PMB, telepon kampus, atau buka halaman kontak.</p>
+      </div>
+      <div class="pmb-help-actions">
+        <a class="btn btn-primary" href="https://wa.me/6282144011300?text=Saya%20tanya%20terkait%20pendaftaran" target="_blank" rel="noopener" data-i18n="pmb.wa">WhatsApp PMB</a>
+        <a class="btn btn-secondary" href="tel:+62361462617">(0361) 462617</a>
+        <a class="btn btn-ghost" href="kontak.html" data-i18n="pmb.contactPage">Halaman kontak</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.png" alt="UNR" class="brand-logo">
+          <span class="wordmark">Ngurah Rai <span>UNR</span></span>
+        </a>
+        <p data-i18n="foot.blurb">Universitas swasta tertua kedua di Bali. Pusat pendidikan tinggi unggul berbasis nilai Tri Hita Karana.</p>
+      </div>
+      <div>
+        <h4 data-i18n="foot.explore">Jelajahi</h4>
+        <ul>
+          <li><a href="fakultas.html" data-i18n="nav.fakultas">Fakultas</a></li>
+          <li><a href="berita.html" data-i18n="nav.berita">Berita</a></li>
+          <li><a href="tentang.html" data-i18n="nav.tentang">Tentang</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="foot.admit">Admisi</h4>
+        <ul>
+          <li><a href="pmb.html" data-i18n="nav.pmb">Portal PMB</a></li>
+          <li><a href="pmb.html#jalur" data-i18n="pmb.trackK">Jalur yang sedang dibuka</a></li>
+          <li><a href="pmb.html#biaya-brosur" data-i18n="pmb.brochureK">Brosur dan informasi biaya</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="foot.contact">Kontak</h4>
+        <ul>
+          <li><a href="kontak.html" data-i18n="foot.addr">Jl. Kampus Ngurah Rai No.30, Penatih, Denpasar Timur, Bali 80238</a></li>
+          <li><a href="tel:+62361462617">(0361) 462617</a></li>
+          <li><a href="mailto:info@unr.ac.id">info@unr.ac.id</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Universitas Ngurah Rai. <span data-i18n="pmb.protoNote">Prototipe PMB berdasarkan informasi publik pmb.unr.ac.id/home.</span></span>
+      <a href="index.html" class="text-link" style="color:var(--gold);" data-i18n="foot.home">Kembali ke Beranda</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/6282144011300?text=Saya%20tanya%20terkait%20pendaftaran" target="_blank" rel="noopener" aria-label="WhatsApp PMB" data-i18n-aria="pmb.wa">
+  <svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.5 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .7-.2 1L6.6 10.8z"/></svg>
+</a>
+<button class="back-to-top" type="button" aria-label="Kembali ke atas" data-i18n-aria="cta.top">↑</button>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/script.js"></script>
+</body>
+</html>
