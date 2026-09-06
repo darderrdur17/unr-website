@@ -195,11 +195,13 @@ function initStatCounters() {
   const counters = document.querySelectorAll('[data-count-to]');
   if (!counters.length) return;
 
+  const formatCount = (value) => String(value);
+
   const animate = (el) => {
     const target = parseInt(el.getAttribute('data-count-to'), 10);
     const suffix = el.getAttribute('data-suffix') || '';
     if (prefersReducedMotion()) {
-      el.textContent = target.toLocaleString('id-ID') + suffix;
+      el.textContent = formatCount(target) + suffix;
       return;
     }
     const duration = 1200;
@@ -207,7 +209,7 @@ function initStatCounters() {
     const step = (now) => {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * target).toLocaleString('id-ID') + suffix;
+      el.textContent = formatCount(Math.round(eased * target)) + suffix;
       if (progress < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
