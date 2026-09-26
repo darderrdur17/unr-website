@@ -38,6 +38,8 @@ This prototype now uses **public facts from [unr.ac.id](https://unr.ac.id)** and
 | `fakultas.html` | Faculties & graduate school |
 | `berita.html` | Official campus news |
 | `pmb.html` | PMB home prototype based on pmb.unr.ac.id/home |
+| `pendaftaran.html` | Info Pendaftaran scaffold (SPP/jadwal placeholders) |
+| `portal.html` | Institutional service-link hub |
 | `kontak.html` | Dedicated Contact Us page (channels, form, campus photo, map) |
 | `tentang.html` | About / Visi & Misi, with the Tri Hita Karana explainer |
 | `assets/i18n.js` | Indonesian + English copy; switcher persists in localStorage |
