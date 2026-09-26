@@ -19,12 +19,14 @@ window.UNR_I18N = {
       lead: 'Didirikan 23 Mei 1979 oleh Yayasan Jagadhita Denpasar, UNR adalah universitas swasta tertua kedua di Bali. Kami membuka pendidikan berkualitas dan terjangkau berlandaskan nilai Tri Hita Karana.',
       tag: 'Visual resmi UNR — dari unr.ac.id',
       caption: 'Identitas UNR: keberanian I Gusti Ngurah Rai, keseimbangan Tri Hita Karana',
+      outro: 'Berani. Seimbang.',
       m1: 'program studi aktif', m2: 'fakultas + pascasarjana', m3: 'berdiri'
     },
     q: { p: 'Program Studi', psub: 'S1, Profesi, dan S2', d: 'Cara Daftar', dsub: 'Alur, jalur, dan biaya daftar', v: 'Visi 2040', vsub: 'Tri Hita Karana & akreditasi', c: 'Hubungi Kami', csub: '(0361) 462617' },
     stat: { y: 'Tahun berdiri', p: 'Program studi aktif', a: 'Luas kampus Penatih', acc: 'Akreditasi institusi BAN-PT (2022)' },
     why: {
       k: 'Kenapa UNR', t: 'Empat hal yang membentuk cara kami mendidik',
+      line: 'Berakar pada nilai Tri Hita Karana — keseimbangan antara Parhyangan, Pawongan, dan Palemahan.',
       h1: 'Tri Hita Karana', p1: 'Pendidikan tidak hanya mentransfer ilmu, tetapi membentuk karakter yang menjaga hubungan dengan Tuhan, sesama, dan lingkungan.',
       h2: 'Terdekat dengan praktik', p2: 'Mahasiswa belajar di Denpasar: hukum berdekatan dengan lembaga, bisnis dekat dengan pariwisata, teknik dekat dengan pembangunan kota.',
       h3: 'Inklusif & terjangkau', p3: 'Sejak 1979 UNR hadir agar lebih banyak masyarakat Bali dan Nusa Tenggara bisa mengakses pendidikan tinggi berkualitas.',
@@ -85,6 +87,7 @@ window.UNR_I18N = {
     foot: {
       blurb: 'Universitas swasta tertua kedua di Bali. Pusat pendidikan tinggi unggul berbasis nilai Tri Hita Karana.',
       explore: 'Jelajahi', admit: 'Admisi', contact: 'Kontak',
+      sig: 'Berani. Seimbang.',
       copy: 'Prototipe desain berdasarkan informasi dan foto resmi unr.ac.id.',
       acc: 'Akreditasi institusi Baik Sekali · BAN-PT 2022', home: 'Kembali ke Beranda',
       kip: 'Beasiswa & KIP', addr: 'Jl. Kampus Ngurah Rai No.30, Penatih, Denpasar Timur, Bali 80238',
@@ -345,17 +348,19 @@ window.UNR_I18N = {
     },
     hero: {
       eyebrow: 'Universitas Ngurah Rai · Penatih, East Denpasar',
-      line1: 'Brave from the very name.',
-      line2: 'Balanced in every step.',
+      line1: 'Berani sejak dari nama.',
+      line2: 'Seimbang dalam setiap langkah.',
       lead: 'Founded on 23 May 1979 by Yayasan Jagadhita Denpasar, UNR is the second-oldest private university in Bali. We offer quality, affordable higher education grounded in Tri Hita Karana.',
       tag: 'Official UNR visual — from unr.ac.id',
       caption: 'UNR’s identity: the courage of I Gusti Ngurah Rai, the balance of Tri Hita Karana',
+      outro: 'Berani. Seimbang.',
       m1: 'active study programs', m2: 'faculties + graduate school', m3: 'founded'
     },
     q: { p: 'Study programs', psub: 'Bachelor, professional, and master’s', d: 'How to apply', dsub: 'Steps, tracks, and application fees', v: 'Vision 2040', vsub: 'Tri Hita Karana & accreditation', c: 'Contact us', csub: '(0361) 462617' },
     stat: { y: 'Year founded', p: 'Active study programs', a: 'Penatih campus area', acc: 'Institutional accreditation BAN-PT (2022)' },
     why: {
       k: 'Why UNR', t: 'Four ideas that shape how we teach',
+      line: 'Berakar pada nilai Tri Hita Karana — keseimbangan antara Parhyangan, Pawongan, dan Palemahan.',
       h1: 'Tri Hita Karana', p1: 'Education transfers knowledge and builds character that honours the relationship with God, others, and the environment.',
       h2: 'Close to practice', p2: 'Students learn in Denpasar: law beside institutions, business beside tourism, engineering beside a growing city.',
       h3: 'Inclusive & affordable', p3: 'Since 1979 UNR has opened quality higher education to more families across Bali and Nusa Tenggara.',
@@ -416,6 +421,7 @@ window.UNR_I18N = {
     foot: {
       blurb: 'The second-oldest private university in Bali. An excellent higher-education centre grounded in Tri Hita Karana.',
       explore: 'Explore', admit: 'Admissions', contact: 'Contact',
+      sig: 'Berani. Seimbang.',
       copy: 'Design prototype based on official information and photos from unr.ac.id.',
       acc: 'Institutional accreditation Baik Sekali · BAN-PT 2022', home: 'Back to home',
       kip: 'Scholarships & KIP', addr: 'Jl. Kampus Ngurah Rai No.30, Penatih, East Denpasar, Bali 80238',

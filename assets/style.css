@@ -381,6 +381,24 @@ section { padding: var(--space-6) 0; }
   margin-top: var(--space-2);
   text-align: center;
 }
+.hero-outro {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--navy);
+  text-align: center;
+  margin-top: 0.35rem;
+}
+.why-value {
+  max-width: 58ch;
+  margin-top: 0.75rem;
+  color: var(--ink-soft);
+}
+.footer-sig {
+  font-family: var(--font-display);
+  color: var(--gold);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
 
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
