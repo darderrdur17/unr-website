@@ -35,13 +35,11 @@ window.UNR_I18N = {
     },
     faces: {
       k: 'Wajah Kampus',
-      t: 'Kehidupan mahasiswa UNR',
-      p: 'Wajah yang belajar, mengajar, dan berkarya di Penatih — berakar pada nilai Tri Hita Karana.',
+      t: 'Wajah Kampus',
+      p: 'Di UNR, belajar bukan cuma di kelas. Ini wajah mahasiswa dan dosen yang tiap hari menjadikan Tri Hita Karana nyata — di lab, di desa, dan di organisasi.',
       c1: 'Belajar aplikatif di kampus Penatih',
-      c2: 'Organisasi dan kegiatan mahasiswa',
-      c3: 'Mengajar dan membimbing di kampus',
-      c4: 'Berkarya bersama masyarakat',
-      infoCta: 'Lihat info pendaftaran'
+      c2: 'Dosen mendampingi, bukan cuma mengajar',
+      c3: 'Organisasi & pengabdian desa'
     },
     info: {
       k: 'Info Pendaftaran',
@@ -431,13 +429,11 @@ window.UNR_I18N = {
     },
     faces: {
       k: 'Campus faces',
-      t: 'Student life at UNR',
-      p: 'People who study, teach, and serve in Penatih — rooted in Tri Hita Karana.',
+      t: 'Wajah Kampus',
+      p: 'At UNR, learning is not only in the classroom. These are the students and lecturers who make Tri Hita Karana real every day — in the lab, in the village, and in organisations.',
       c1: 'Applied learning on the Penatih campus',
-      c2: 'Student organisations and campus life',
-      c3: 'Teaching and mentoring on campus',
-      c4: 'Working with the community',
-      infoCta: 'See admissions info'
+      c2: 'Lecturers who accompany, not only teach',
+      c3: 'Organisations and village service'
     },
     info: {
       k: 'Admissions info',
