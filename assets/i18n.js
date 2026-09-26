@@ -23,7 +23,7 @@ window.UNR_I18N = {
       outro: 'Berani. Seimbang.',
       m1: 'program studi aktif', m2: 'fakultas + pascasarjana', m3: 'berdiri'
     },
-    q: { p: 'Program Studi', psub: 'S1, Profesi, dan S2', d: 'Cara Daftar', dsub: 'Alur, jalur, dan biaya daftar', v: 'Visi 2040', vsub: 'Tri Hita Karana & akreditasi', c: 'Hubungi Kami', csub: '(0361) 462617' },
+    q: { p: 'Program Studi', psub: 'S1, Profesi, dan S2', d: 'Cara Daftar', dsub: 'Alur, jalur, dan biaya daftar', portal: 'Portal', portalSub: 'Layanan dan tautan kampus', v: 'Visi 2040', vsub: 'Tri Hita Karana & akreditasi', c: 'Hubungi Kami', csub: '(0361) 462617' },
     stat: { y: 'Tahun berdiri', p: 'Program studi aktif', a: 'Luas kampus Penatih', acc: 'Akreditasi institusi BAN-PT (2022)' },
     why: {
       k: 'Kenapa UNR', t: 'Empat hal yang membentuk cara kami mendidik',
@@ -417,7 +417,7 @@ window.UNR_I18N = {
       outro: 'Berani. Seimbang.',
       m1: 'active study programs', m2: 'faculties + graduate school', m3: 'founded'
     },
-    q: { p: 'Study programs', psub: 'Bachelor, professional, and master’s', d: 'How to apply', dsub: 'Steps, tracks, and application fees', v: 'Vision 2040', vsub: 'Tri Hita Karana & accreditation', c: 'Contact us', csub: '(0361) 462617' },
+    q: { p: 'Study programs', psub: 'Bachelor, professional, and master’s', d: 'How to apply', dsub: 'Steps, tracks, and application fees', portal: 'Portal', portalSub: 'Campus services and links', v: 'Vision 2040', vsub: 'Tri Hita Karana & accreditation', c: 'Contact us', csub: '(0361) 462617' },
     stat: { y: 'Year founded', p: 'Active study programs', a: 'Penatih campus area', acc: 'Institutional accreditation BAN-PT (2022)' },
     why: {
       k: 'Why UNR', t: 'Four ideas that shape how we teach',
