@@ -1925,6 +1925,8 @@ button.text-link {
 .fee-table { min-width: 36rem; }
 .admit-contact { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
 .enquire-privacy { font-size: 0.88rem; max-width: 62ch; }
+.field-error { display: block; color: var(--navy); font-size: 0.85rem; margin-top: 0.25rem; }
+.contact-form [disabled] { opacity: 0.55; cursor: not-allowed; }
 .official-links { display: grid; gap: var(--space-2); }
 .official-links a { color: var(--gold-deep); }
 .countdown-banner.is-ended .countdown-timer { display: none; }

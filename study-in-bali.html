@@ -78,36 +78,33 @@
     <div class="container">
       <p class="kicker">Enquiry</p>
       <h2>Ask admissions to write back</h2>
-      <form class="contact-form" data-study-form>
+      <form class="contact-form" data-study-form method="post" action="" accept-charset="UTF-8" novalidate>
+        <p class="form-status" data-study-disabled role="alert" hidden></p>
         <label>
           <span>Full name</span>
-          <input type="text" name="name" required autocomplete="name">
+          <input type="text" name="name" id="enquiry-name" autocomplete="name" required minlength="2" maxlength="120" aria-describedby="err-name">
+          <span class="field-error" id="err-name" hidden></span>
         </label>
         <label>
           <span>Email</span>
-          <input type="email" name="email" required autocomplete="email">
-        </label>
-        <label>
-          <span>Country of residence</span>
-          <input type="text" name="country" required autocomplete="country-name">
-        </label>
-        <label>
-          <span>Programme interest</span>
-          <input type="text" name="programme" placeholder="TODO: official English programme list from UNR">
+          <input type="email" name="email" id="enquiry-email" autocomplete="email" required maxlength="254" aria-describedby="err-email">
+          <span class="field-error" id="err-email" hidden></span>
         </label>
         <label>
           <span>Message</span>
-          <textarea name="message" required></textarea>
+          <textarea name="message" id="enquiry-message" required minlength="10" maxlength="2000" aria-describedby="err-message"></textarea>
+          <span class="field-error" id="err-message" hidden></span>
         </label>
         <p class="enquire-privacy">
-          Cross-border disclosure: if you submit this form, your details are transferred to and stored in Indonesia (Denpasar) so admissions staff can answer your enquiry. Access is limited to that purpose. Safeguards: TODO: name the DPO, legal basis, and extra contracts UNR uses for international transfers. Retention period: TODO: retention period UNR must supply. Nothing is stored on this static website; your mail app sends the message to the campus address.
+          Cross-border disclosure: if you submit this form, your details are transferred to and stored in Indonesia (Denpasar) so admissions staff can answer your enquiry. Access is limited to that purpose. Safeguards: [PLACEHOLDER: DPO / legal basis / transfer contracts]. Retention period: [PLACEHOLDER: retention period].
         </p>
         <label class="pmb-check">
-          <input type="checkbox" name="consent" required>
-          <span>I understand the transfer to Indonesia, its purpose, the planned safeguards, and the retention note above, and I ask UNR to use my details only to reply to this enquiry.</span>
+          <input type="checkbox" name="consent" id="enquiry-consent" value="yes" required aria-describedby="err-consent">
+          <span data-consent-label>I agree that [PLACEHOLDER: HUMAS_EMAIL] may receive this enquiry, and that my details are stored in Indonesia for that reply only.</span>
         </label>
+        <span class="field-error" id="err-consent" hidden></span>
         <button class="btn btn-primary" type="submit">Send enquiry</button>
-        <p class="form-status" data-study-status hidden>Your email app should open. If it does not, write to info@unr.ac.id.</p>
+        <p class="form-status" data-study-status role="status" hidden></p>
       </form>
     </div>
   </section>
@@ -139,6 +136,8 @@
 </footer>
 
 <button class="back-to-top" type="button" aria-label="Back to top">↑</button>
+<script src="assets/config.js"></script>
+<script src="assets/validate.js"></script>
 <script src="assets/i18n.js"></script>
 <script src="assets/script.js"></script>
 </body>

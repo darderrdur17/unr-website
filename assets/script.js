@@ -559,19 +559,113 @@ function initContactForm() {
 function initStudyForm() {
   const form = document.querySelector('[data-study-form]');
   if (!form) return;
+
+  const cfg = window.UNR_CONFIG || {};
+  const endpoint = String(cfg.appsScriptUrl || '').trim();
+  const humas = String(cfg.humasEmail || '').trim();
+  const status = form.querySelector('[data-study-status]');
+  const disabledNote = form.querySelector('[data-study-disabled]');
+  const submitBtn = form.querySelector('[type="submit"]');
+  const consentLabel = form.querySelector('[data-consent-label]');
+
+  if (humas && consentLabel) {
+    consentLabel.textContent = consentLabel.textContent.replace('[PLACEHOLDER: HUMAS_EMAIL]', humas);
+  }
+
+  const showFieldErrors = (errors) => {
+    ['name', 'email', 'message', 'consent'].forEach((key) => {
+      const el = form.querySelector('#err-' + key);
+      if (!el) return;
+      if (errors[key]) {
+        el.textContent = errors[key];
+        el.hidden = false;
+      } else {
+        el.textContent = '';
+        el.hidden = true;
+      }
+    });
+  };
+
+  if (!endpoint) {
+    form.action = '';
+    if (submitBtn) submitBtn.disabled = true;
+    if (disabledNote) {
+      disabledNote.hidden = false;
+      disabledNote.textContent = 'Enquiry posting is not live yet. [PLACEHOLDER: APPS_SCRIPT_WEBAPP_URL] must be set in assets/config.js.';
+    }
+    form.addEventListener('submit', (event) => event.preventDefault());
+    return;
+  }
+
+  form.action = endpoint;
+
+  const throttleKey = 'unr-enquiry-times';
+  const tooMany = () => {
+    const now = Date.now();
+    let times = [];
+    try { times = JSON.parse(sessionStorage.getItem(throttleKey) || '[]'); } catch (_) { times = []; }
+    times = times.filter((t) => now - t < 60000);
+    return times.length >= 5;
+  };
+  const stamp = () => {
+    const now = Date.now();
+    let times = [];
+    try { times = JSON.parse(sessionStorage.getItem(throttleKey) || '[]'); } catch (_) { times = []; }
+    times.push(now);
+    sessionStorage.setItem(throttleKey, JSON.stringify(times));
+  };
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    if (!form.consent?.checked) return;
-    const name = (form.name?.value || '').trim();
-    const email = (form.email?.value || '').trim();
-    const country = (form.country?.value || '').trim();
-    const programme = (form.programme?.value || '').trim();
-    const message = (form.message?.value || '').trim();
-    const subject = encodeURIComponent(`[UNR Study in Bali] ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCountry: ${country}\nProgramme: ${programme}\nConsent: transfer to Indonesia acknowledged\n\n${message}`);
-    window.location.href = `mailto:info@unr.ac.id?subject=${subject}&body=${body}`;
-    const status = form.querySelector('[data-study-status]');
-    if (status) status.hidden = false;
+    const payload = {
+      name: (form.name?.value || '').trim(),
+      email: (form.email?.value || '').trim(),
+      message: (form.message?.value || '').trim(),
+      consent: form.consent?.checked ? 'yes' : ''
+    };
+    const errors = (window.UNR_VALIDATE && window.UNR_VALIDATE.enquiry({
+      name: payload.name,
+      email: payload.email,
+      message: payload.message,
+      consent: form.consent?.checked
+    })) || {};
+    showFieldErrors(errors);
+    if (Object.keys(errors).length) {
+      if (status) {
+        status.hidden = false;
+        status.setAttribute('role', 'alert');
+        status.textContent = 'Please correct the highlighted fields. Nothing was sent.';
+      }
+      return;
+    }
+    if (tooMany()) {
+      if (status) {
+        status.hidden = false;
+        status.setAttribute('role', 'alert');
+        status.textContent = 'Too many attempts. Please wait a minute before sending again.';
+      }
+      return;
+    }
+
+    const url = endpoint + (endpoint.indexOf('?') >= 0 ? '&' : '?') + 'format=json';
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+      body: JSON.stringify(payload)
+    }).then((res) => {
+      stamp();
+      if (!res.ok) throw new Error('bad status');
+      if (status) {
+        status.hidden = false;
+        status.setAttribute('role', 'status');
+        status.textContent = 'Thank you. Your enquiry was sent.';
+      }
+      form.reset();
+      showFieldErrors({});
+    }).catch(() => {
+      stamp();
+      HTMLFormElement.prototype.submit.call(form);
+    });
   });
 }
 
