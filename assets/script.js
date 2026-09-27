@@ -2,6 +2,8 @@
 // UNR Website — shared interactivity
 // ==========================================================================
 
+document.documentElement.classList.add('js-enabled');
+
 document.addEventListener('DOMContentLoaded', () => {
   initI18n();
   initHeaderScrollState();
@@ -86,7 +88,6 @@ function applyLang(lang) {
     if (value != null) el.setAttribute('alt', value);
   });
 
-  const page = document.body.getAttribute('data-page');
   const titleKey = page ? `meta.${page}Title` : 'meta.homeTitle';
   const title = getNested(dict, titleKey);
   if (title) document.title = title;
