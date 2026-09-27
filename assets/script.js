@@ -94,7 +94,9 @@ function applyLang(lang) {
 
   const heroTitle = document.querySelector('[data-hero-title]');
   if (heroTitle && dict.hero) {
-    heroTitle.innerHTML = `${wrapHeroWords(dict.hero.line1)}<br>${wrapHeroWords(dict.hero.line2)}`;
+    heroTitle.innerHTML =
+      `<span class="hero-title-line">${wrapHeroWords(dict.hero.line1)}</span>` +
+      `<span class="hero-title-line">${wrapHeroWords(dict.hero.line2)}</span>`;
     const hero = document.querySelector('.hero');
     if (hero) {
       hero.classList.remove('is-ready');

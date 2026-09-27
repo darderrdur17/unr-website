@@ -158,19 +158,31 @@ section { padding: var(--space-6) 0; }
   box-shadow: 0 4px 16px var(--shadow-navy);
 }
 .nav-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
+  column-gap: clamp(0.65rem, 2vw, 1.15rem);
+  row-gap: 0.35rem;
   padding: 1.05rem 0;
   min-width: 0;
 }
-.brand { min-width: 0; flex: 0 1 auto; }
+.site-header nav {
+  min-width: 0;
+  justify-self: center;
+}
 .brand {
   display: flex;
   align-items: center;
   gap: 0.7rem;
   text-decoration: none;
+  flex-shrink: 0;
+  justify-self: start;
+  position: relative;
+  z-index: 2;
+}
+.nav-cta {
+  justify-self: end;
+  flex-shrink: 0;
 }
 .brand-logo {
   width: 42px;
@@ -214,21 +226,32 @@ section { padding: var(--space-6) 0; }
 .nav-links {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.55rem;
   list-style: none;
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
 }
 .nav-links a {
   text-decoration: none;
   color: var(--ink);
-  font-size: 0.93rem;
+  font-size: 0.82rem;
   font-weight: 500;
-  padding-bottom: 3px;
+  line-height: 1.25;
+  white-space: nowrap;
+  padding-bottom: 2px;
   border-bottom: 2px solid transparent;
   transition: border-color 0.15s ease, color 0.15s ease;
 }
 .nav-links a:hover, .nav-links a.active { border-color: var(--gold); color: var(--navy); }
 .nav-cta { display: flex; align-items: center; gap: var(--space-3); }
+.nav-cta .btn-primary {
+  font-size: 0.82rem;
+  padding: 0.55rem 0.95rem;
+  white-space: nowrap;
+}
 .nav-toggle {
   display: none;
   background: var(--paper);
@@ -257,6 +280,14 @@ section { padding: var(--space-6) 0; }
 .nav-overlay.is-on { display: block; }
 
 @media (max-width: 1100px) {
+  .nav-row {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 0.75rem;
+  }
+  .site-header nav {
+    justify-self: auto;
+  }
   .site-header {
     z-index: 210;
     background: var(--cream);
@@ -275,6 +306,8 @@ section { padding: var(--space-6) 0; }
     width: min(84vw, 360px);
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
     background: var(--paper);
     padding: 5.4rem 1.6rem 2rem;
     gap: 0.15rem;
@@ -296,6 +329,7 @@ section { padding: var(--space-6) 0; }
   .nav-links a {
     font-size: 1.12rem;
     width: 100%;
+    white-space: normal;
     padding: 0.85rem 0.2rem;
     color: var(--navy);
     border-bottom: 1px solid var(--line);
@@ -329,7 +363,18 @@ section { padding: var(--space-6) 0; }
   letter-spacing: 0.02em;
   margin-bottom: var(--space-2);
 }
-.hero h1 { max-width: 16ch; font-size: clamp(1.75rem, 4.2vw, 3.05rem); }
+.hero h1 {
+  max-width: min(13.5em, 100%);
+  font-size: clamp(1.85rem, 3.6vw, 2.85rem);
+  line-height: 1.14;
+  letter-spacing: -0.02em;
+}
+.hero-title-line {
+  display: block;
+}
+.hero-title-line + .hero-title-line {
+  margin-top: 0.12em;
+}
 .hero-lead { font-size: 1.05rem; max-width: 46ch; }
 .hero-actions { display: flex; gap: var(--space-2); margin-top: var(--space-3); flex-wrap: wrap; }
 .hero-meta {
@@ -511,7 +556,7 @@ html.js-enabled .hero.is-ready .hero-word {
 @media (max-width: 900px) {
   .hero-grid { grid-template-columns: 1fr; }
   .hero-visual { max-width: none; width: 100%; }
-  .hero h1 { max-width: 20ch; }
+  .hero h1 { max-width: min(13.5em, 100%); }
   .hero-visual .photo-placeholder { aspect-ratio: 2 / 1; }
 }
 
@@ -1837,16 +1882,22 @@ button.text-link {
 }
 
 /* Master-spec components */
-.hero-answers { display: grid; gap: var(--space-2); margin: var(--space-3) 0; }
+.hero-answers { display: grid; gap: 1.05rem; margin: var(--space-3) 0 var(--space-4); }
 .hero-answers dt {
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--gold-deep);
-  margin: 0;
+  margin: 0 0 0.2rem;
 }
-.hero-answers dd { margin: 0.15rem 0 0; color: var(--ink-soft); max-width: 48ch; }
+.hero-answers dd {
+  margin: 0;
+  color: var(--ink-soft);
+  max-width: 48ch;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
 .hero-answers .position-line { color: var(--navy); font-weight: 600; }
 .fee-split { display: grid; gap: var(--space-2); grid-template-columns: 1fr; }
 .fee-split article {
