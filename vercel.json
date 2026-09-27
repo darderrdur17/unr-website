@@ -1,14 +1,14 @@
 {
   "redirects": [
-    { "source": "/study-in-bali", "destination": "/study-in-bali.html", "permanent": true },
-    { "source": "/study-in-bali/id", "destination": "/study-in-bali-id.html", "permanent": true },
-    { "source": "/fakultas", "destination": "/fakultas.html", "permanent": true },
-    { "source": "/pmb", "destination": "/pmb.html", "permanent": true },
-    { "source": "/tentang", "destination": "/tentang.html", "permanent": true },
-    { "source": "/berita", "destination": "/berita.html", "permanent": true },
-    { "source": "/kontak", "destination": "/kontak.html", "permanent": true },
-    { "source": "/pendaftaran", "destination": "/pendaftaran.html", "permanent": true },
-    { "source": "/portal", "destination": "/portal.html", "permanent": true },
+    { "source": "/study-in-bali", "destination": "/study-in-bali.html", "permanent": false },
+    { "source": "/study-in-bali/id", "destination": "/study-in-bali-id.html", "permanent": false },
+    { "source": "/fakultas", "destination": "/fakultas.html", "permanent": false },
+    { "source": "/pmb", "destination": "/pmb.html", "permanent": false },
+    { "source": "/tentang", "destination": "/tentang.html", "permanent": false },
+    { "source": "/berita", "destination": "/berita.html", "permanent": false },
+    { "source": "/kontak", "destination": "/kontak.html", "permanent": false },
+    { "source": "/pendaftaran", "destination": "/pendaftaran.html", "permanent": false },
+    { "source": "/portal", "destination": "/portal.html", "permanent": false },
     { "source": "/duta", "destination": "/pmb.html#duta", "permanent": false }
   ],
   "headers": [

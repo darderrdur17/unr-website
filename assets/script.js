@@ -559,14 +559,16 @@ function initBackToTop() {
 
 function initAccreditation() {
   const cfg = window.UNR_CONFIG || {};
+  const grade = String(cfg.accreditationGrade || '').trim();
   const sk = String(cfg.accreditationSk || '').trim();
   const expiry = String(cfg.accreditationExpiry || '').trim();
   const slots = document.querySelectorAll('[data-accreditation]');
-  if (!sk || !expiry) {
+  const expiryDate = expiry ? new Date(expiry) : null;
+  const expired = !expiryDate || Number.isNaN(expiryDate.getTime()) || expiryDate < new Date(new Date().toDateString());
+  if (!grade || !sk || !expiry || expired) {
     slots.forEach((el) => { el.hidden = true; });
     return;
   }
-  const grade = 'Baik Sekali';
   const note = grade + ' · SK No. ' + sk + ' · berlaku hingga ' + expiry;
   slots.forEach((el) => {
     el.hidden = false;
@@ -609,8 +611,9 @@ function initStudyForm() {
   const submitBtn = form.querySelector('[type="submit"]');
   const consentLabel = form.querySelector('[data-consent-label]');
 
-  if (humas && consentLabel) {
-    consentLabel.textContent = consentLabel.textContent.replace('[PLACEHOLDER: HUMAS_EMAIL]', humas);
+  if (consentLabel) {
+    const who = humas || 'Universitas Ngurah Rai';
+    consentLabel.textContent = consentLabel.textContent.replace(/Universitas Ngurah Rai|\[PLACEHOLDER: HUMAS_EMAIL\]/g, who);
   }
 
   const showFieldErrors = (errors) => {
@@ -689,24 +692,31 @@ function initStudyForm() {
     }
 
     const url = endpoint + (endpoint.indexOf('?') >= 0 ? '&' : '?') + 'format=json';
+    const body = Object.keys(payload)
+      .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(payload[k]))
+      .join('&');
     fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
-      body: JSON.stringify(payload)
-    }).then((res) => {
-      stamp();
-      if (!res.ok) throw new Error('bad status');
-      if (status) {
-        status.hidden = false;
-        status.setAttribute('role', 'status');
-        status.textContent = 'Thank you. Your enquiry was sent.';
-      }
-      form.reset();
-      showFieldErrors({});
-    }).catch(() => {
-      stamp();
-      HTMLFormElement.prototype.submit.call(form);
-    });
+      body: body
+    }).then((res) => res.json())
+      .then((data) => {
+        stamp();
+        if (!data || data.ok !== true) {
+          throw new Error((data && data.errors && data.errors[0]) || 'The enquiry could not be sent.');
+        }
+        if (status) {
+          status.hidden = false;
+          status.setAttribute('role', 'status');
+          status.textContent = 'Thank you. Your enquiry was sent.';
+        }
+        form.reset();
+        showFieldErrors({});
+      })
+      .catch(() => {
+        stamp();
+        HTMLFormElement.prototype.submit.call(form);
+      });
   });
 }
 
