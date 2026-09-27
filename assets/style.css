@@ -166,7 +166,6 @@ section { padding: var(--space-6) 0; }
   min-width: 0;
 }
 .brand { min-width: 0; flex: 0 1 auto; }
-.wordmark { white-space: nowrap; }
 .brand {
   display: flex;
   align-items: center;
@@ -179,16 +178,17 @@ section { padding: var(--space-6) 0; }
   object-fit: contain;
 }
 .wordmark {
-  display: flex;
-  align-items: baseline;
-  gap: 0.5rem;
+  white-space: nowrap;
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 600;
   color: var(--navy);
   text-decoration: none;
 }
-.wordmark span { color: var(--gold); }
+.wordmark span {
+  color: var(--gold);
+  margin-left: 0.45em;
+}
 .lang-switch {
   display: inline-flex;
   border: 1px solid var(--line-strong);
@@ -343,6 +343,7 @@ section { padding: var(--space-6) 0; }
 .hero-meta strong { color: var(--navy); }
 
 .hero-word { display: inline-block; }
+.hero-word + .hero-word { margin-left: 0.28em; }
 html.js-enabled .hero-word { opacity: 0; transform: translateY(0.4em); }
 html.js-enabled .hero.is-ready .hero-word {
   animation: word-rise 0.7s cubic-bezier(.2,.7,.2,1) forwards;
