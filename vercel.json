@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    { "source": "/study-in-bali", "destination": "/study-in-bali.html", "permanent": true },
+    { "source": "/study-in-bali/id", "destination": "/study-in-bali-id.html", "permanent": true },
+    { "source": "/fakultas", "destination": "/fakultas.html", "permanent": true },
+    { "source": "/pmb", "destination": "/pmb.html", "permanent": true },
+    { "source": "/tentang", "destination": "/tentang.html", "permanent": true },
+    { "source": "/berita", "destination": "/berita.html", "permanent": true },
+    { "source": "/kontak", "destination": "/kontak.html", "permanent": true },
+    { "source": "/pendaftaran", "destination": "/pendaftaran.html", "permanent": true },
+    { "source": "/portal", "destination": "/portal.html", "permanent": true },
+    { "source": "/duta", "destination": "/pmb.html#duta", "permanent": false }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+      ]
+    }
+  ]
+}
