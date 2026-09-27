@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Penerimaan Mahasiswa Baru — Universitas Ngurah Rai</title>
-<meta name="description" content="Prototipe portal Penerimaan Mahasiswa Baru Universitas Ngurah Rai: cari jalur, program studi, gelombang PMB Mandiri 2026/2027, dan RPL.">
+<title>PMB — Jalur, biaya, dan pendaftaran mahasiswa baru UNR</title>
+<meta name="description" content="Cari jalur masuk, pecah biaya pendaftaran vs SPP, FAQ, dan kontak admisi. Prototipe berdasarkan portal PMB resmi.">
+<link rel="canonical" href="https://unr.ac.id/pmb.html">
+<meta property="og:title" content="PMB — Jalur, biaya, dan pendaftaran mahasiswa baru UNR">
+<meta property="og:description" content="Cari jalur masuk, pecah biaya pendaftaran vs SPP, FAQ, dan kontak admisi. Prototipe berdasarkan portal PMB resmi.">
+<meta property="og:image" content="https://unr.ac.id/assets/img/hero.jpg">
+<meta property="og:url" content="https://unr.ac.id/pmb.html">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -33,6 +40,7 @@
         <li><a href="pmb.html" class="active" data-i18n="nav.admisi">Admisi</a></li>
         <li><a href="berita.html" data-i18n="nav.berita">Berita</a></li>
         <li><a href="tentang.html" data-i18n="nav.tentang">Tentang</a></li>
+          <li><a href="study-in-bali.html">Study in Bali</a></li>
         <li><a href="kontak.html" data-i18n="nav.kontak">Kontak</a></li>
       </ul>
     </nav>
@@ -56,9 +64,13 @@
       <p class="kicker" data-i18n="pmb.k">Penerimaan Mahasiswa Baru</p>
       <h1 data-i18n="pmb.t">Cari jalur pendaftaran sesuai program studi yang kamu minati</h1>
       <p data-i18n="pmb.lead">Prototipe halaman beranda PMB UNR: jenjang, program studi, sistem kuliah, gelombang yang dibuka, dan bantuan. Alur di sini menunjukkan ide — belum terhubung ke sistem pendaftaran resmi.</p>
+      <p class="admit-contact">
+        <strong>Kontak admisi</strong> — TODO: nama petugas yang harus disebut Bagian Admisi.
+        <a href="https://wa.me/6282144011300?text=Saya%20tanya%20terkait%20pendaftaran" target="_blank" rel="noopener">WhatsApp PMB</a>
+        <a href="mailto:info@unr.ac.id">info@unr.ac.id</a>
+      </p>
       <div class="hero-actions pmb-hero-actions">
         <a href="#cari" class="btn btn-primary" data-i18n="pmb.findCta">Cari jalur pendaftaran</a>
-        <a href="#akun" class="btn btn-ghost" data-i18n="pmb.loginCta">Sudah punya akun? Masuk</a>
       </div>
     </div>
   </section>
@@ -89,11 +101,11 @@
       <div class="pmb-panel" data-reveal>
         <p class="kicker" data-i18n="pmb.guideK">Petunjuk pendaftaran</p>
         <h2 data-i18n="pmb.guideT">Tata cara mahasiswa baru</h2>
-        <ol class="pmb-steps">
+        <ol class="visual-stepper">
           <li data-i18n="pmb.step1">Pilih jenjang, program studi, dan sistem kuliah.</li>
           <li data-i18n="pmb.step2">Temukan jalur yang sedang dibuka, lalu pilih Daftar.</li>
           <li data-i18n="pmb.step3">Di sistem resmi, buat akun dan lengkapi data diri.</li>
-          <li data-i18n="pmb.step4">Bayar biaya daftar sesuai rentang yang tertera di jalur.</li>
+          <li data-i18n="pmb.step4">Bayar biaya pendaftaran (terpisah dari SPP semester).</li>
         </ol>
       </div>
     </div>
@@ -160,7 +172,8 @@
           <h3 data-i18n="pmb.track1">PMB S1 2026/2027 — PMB Mandiri Gelombang 3</h3>
           <p class="pmb-meta" data-i18n="pmb.sysPagi">Reguler Pagi Denpasar (A)</p>
           <p data-i18n="pmb.date1">6 Juni 2026 – 6 September 2026</p>
-          <p class="program-fee" data-i18n="pmb.feePagi">Biaya daftar Rp 350.000 – Rp 7.800.000</p>
+          <p class="program-fee">Biaya pendaftaran: Rp 350.000 – Rp 7.800.000 (sumber pmb.unr.ac.id)</p>
+          <p class="program-fee">Biaya masuk / SPP semester: TODO: SPP Reguler Pagi Denpasar per program dari Bagian Admisi</p>
           <button class="btn btn-primary" type="button" data-pmb-apply data-i18n="cta.apply">Daftar Sekarang</button>
         </article>
         <article class="pmb-track" data-reveal data-reveal-delay="60" data-level="s1" data-program="ap,mn,ih,ts,ar" data-system="sore-gianyar">
@@ -168,7 +181,8 @@
           <h3 data-i18n="pmb.track1">PMB S1 2026/2027 — PMB Mandiri Gelombang 3</h3>
           <p class="pmb-meta" data-i18n="pmb.sysSoreG">Reguler Sore Gianyar (B)</p>
           <p data-i18n="pmb.date2">6 Juni 2026 – 30 September 2026</p>
-          <p class="program-fee" data-i18n="pmb.feeSore">Biaya daftar Rp 350.000 – Rp 8.300.000</p>
+          <p class="program-fee">Biaya pendaftaran: Rp 350.000 – Rp 8.300.000 (sumber pmb.unr.ac.id)</p>
+          <p class="program-fee">Biaya masuk / SPP semester: TODO: SPP Reguler Sore Gianyar per program dari Bagian Admisi</p>
           <button class="btn btn-primary" type="button" data-pmb-apply data-i18n="cta.apply">Daftar Sekarang</button>
         </article>
         <article class="pmb-track" data-reveal data-reveal-delay="120" data-level="s1" data-program="ap,mn,ih,ts,ar" data-system="sore-denpasar">
@@ -176,7 +190,8 @@
           <h3 data-i18n="pmb.track1">PMB S1 2026/2027 — PMB Mandiri Gelombang 3</h3>
           <p class="pmb-meta" data-i18n="pmb.sysSoreD">Reguler Sore Denpasar (A)</p>
           <p data-i18n="pmb.date1">6 Juni 2026 – 6 September 2026</p>
-          <p class="program-fee" data-i18n="pmb.feeSore">Biaya daftar Rp 350.000 – Rp 8.300.000</p>
+          <p class="program-fee">Biaya pendaftaran: Rp 350.000 – Rp 8.300.000 (sumber pmb.unr.ac.id)</p>
+          <p class="program-fee">Biaya masuk / SPP semester: TODO: SPP Reguler Sore Denpasar per program dari Bagian Admisi</p>
           <button class="btn btn-primary" type="button" data-pmb-apply data-i18n="cta.apply">Daftar Sekarang</button>
         </article>
         <article class="pmb-track" data-reveal data-reveal-delay="180" data-level="s1" data-program="ap,mn,ih,ts,ar" data-system="rpl">
@@ -184,7 +199,8 @@
           <h3 data-i18n="pmb.trackRpl">RPL 2026 — RPL Perolehan SKS Gelombang 3</h3>
           <p class="pmb-meta">RPL</p>
           <p data-i18n="pmb.date1">6 Juni 2026 – 6 September 2026</p>
-          <p class="program-fee" data-i18n="pmb.feeSore">Biaya daftar Rp 350.000 – Rp 8.300.000</p>
+          <p class="program-fee">Biaya pendaftaran: Rp 350.000 – Rp 8.300.000 (sumber pmb.unr.ac.id)</p>
+          <p class="program-fee">Biaya masuk / SPP semester: TODO: SPP jalur RPL per program dari Bagian Admisi</p>
           <button class="btn btn-primary" type="button" data-pmb-apply data-i18n="cta.apply">Daftar Sekarang</button>
         </article>
       </div>
@@ -209,63 +225,63 @@
         <article class="program-card" data-program="s1" data-reveal>
           <span class="program-tag">S1 · FISHUM</span>
           <h3 data-i18n="prog.ap">Administrasi Publik</h3>
-          <p data-i18n="pmb.accB">Akreditasi B</p>
+          <p>Akreditasi: TODO: konfirmasi peringkat BAN-PT Administrasi Publik dengan Bagian Admisi</p>
           <p class="program-fee" data-i18n="pmb.tracks4">Tersedia 4 jalur pendaftaran</p>
           <button class="text-link" type="button" data-pmb-show-tracks="s1" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
         </article>
         <article class="program-card" data-program="s1" data-reveal data-reveal-delay="60">
           <span class="program-tag">S1 · FEB</span>
           <h3 data-i18n="prog.mn">Manajemen</h3>
-          <p data-i18n="pmb.accBaikSekali">Akreditasi Baik Sekali</p>
+          <p>Akreditasi: TODO: konfirmasi peringkat BAN-PT Manajemen dengan Bagian Admisi</p>
           <p class="program-fee" data-i18n="pmb.tracks4">Tersedia 4 jalur pendaftaran</p>
           <button class="text-link" type="button" data-pmb-show-tracks="s1" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
         </article>
         <article class="program-card" data-program="s1" data-reveal data-reveal-delay="120">
           <span class="program-tag">S1 · FH</span>
-          <h3 data-i18n="prog.ih">Ilmu Hukum</h3>
-          <p data-i18n="pmb.accUnggul">Akreditasi Unggul</p>
+          <h3 data-i18n="prog.ih">Hukum</h3>
+          <p>Akreditasi: TODO: konfirmasi peringkat BAN-PT Hukum dengan Bagian Admisi</p>
           <p class="program-fee" data-i18n="pmb.tracks4">Tersedia 4 jalur pendaftaran</p>
           <button class="text-link" type="button" data-pmb-show-tracks="s1" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
         </article>
         <article class="program-card" data-program="s1" data-reveal data-reveal-delay="180">
           <span class="program-tag">S1 · FST</span>
           <h3 data-i18n="prog.ts">Teknik Sipil</h3>
-          <p data-i18n="pmb.accB">Akreditasi B</p>
+          <p>Akreditasi: TODO: konfirmasi peringkat BAN-PT Teknik Sipil dengan Bagian Admisi</p>
           <p class="program-fee" data-i18n="pmb.tracks2">Tersedia 2 jalur pendaftaran</p>
           <button class="text-link" type="button" data-pmb-show-tracks="s1" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
         </article>
         <article class="program-card" data-program="s1" data-reveal>
           <span class="program-tag">S1 · FST</span>
           <h3 data-i18n="prog.ar">Arsitektur</h3>
-          <p data-i18n="pmb.accB">Akreditasi B</p>
+          <p>Akreditasi: TODO: konfirmasi peringkat BAN-PT Arsitektur dengan Bagian Admisi</p>
           <p class="program-fee" data-i18n="pmb.tracks2">Tersedia 2 jalur pendaftaran</p>
           <button class="text-link" type="button" data-pmb-show-tracks="s1" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
         </article>
         <article class="program-card" data-program="prof" data-reveal data-reveal-delay="60">
           <span class="program-tag">Profesi · FST</span>
-          <h3 data-i18n="prog.ppi">Program Profesi Insinyur</h3>
-          <p data-i18n="pmb.accBaik">Akreditasi Baik</p>
+          <h3 data-i18n="prog.ppi">Profesi Insinyur</h3>
+          <p>Akreditasi: TODO: konfirmasi peringkat BAN-PT Profesi Insinyur dengan Bagian Admisi</p>
           <p class="program-fee" data-i18n="pmb.noTrack">Belum ada jalur pendaftaran yang dibuka</p>
           <button class="text-link" type="button" data-pmb-show-tracks="prof" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
         </article>
         <article class="program-card" data-program="s2" data-reveal data-reveal-delay="120">
           <span class="program-tag">S2 · Pascasarjana</span>
           <h3 data-i18n="prog.mmi">Magister Manajemen Inovasi</h3>
-          <p data-i18n="pmb.accBaik">Akreditasi Baik</p>
+          <p>Akreditasi: TODO: konfirmasi peringkat BAN-PT Magister Manajemen Inovasi dengan Bagian Admisi</p>
           <p class="program-fee" data-i18n="pmb.noTrack">Belum ada jalur pendaftaran yang dibuka</p>
           <button class="text-link" type="button" data-pmb-show-tracks="s2" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
         </article>
         <article class="program-card" data-program="s2" data-reveal data-reveal-delay="180">
           <span class="program-tag">S2 · Pascasarjana</span>
           <h3 data-i18n="prog.mh">Magister Hukum</h3>
-          <p data-i18n="pmb.accB">Akreditasi B</p>
+          <p>Akreditasi: TODO: konfirmasi peringkat BAN-PT Magister Hukum dengan Bagian Admisi</p>
           <p class="program-fee" data-i18n="pmb.noTrack">Belum ada jalur pendaftaran yang dibuka</p>
           <button class="text-link" type="button" data-pmb-show-tracks="s2" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
         </article>
         <article class="program-card" data-program="s2" data-reveal>
           <span class="program-tag">S2 · Pascasarjana</span>
           <h3 data-i18n="prog.map">Magister Administrasi Publik</h3>
-          <p data-i18n="pmb.accUnggul">Akreditasi Unggul</p>
+          <p>Akreditasi: TODO: konfirmasi peringkat BAN-PT Magister Administrasi Publik dengan Bagian Admisi</p>
           <p class="program-fee" data-i18n="pmb.noTrack">Belum ada jalur pendaftaran yang dibuka</p>
           <button class="text-link" type="button" data-pmb-show-tracks="s2" data-i18n="pmb.seeTracks">Lihat jalur pendaftaran →</button>
         </article>
@@ -278,33 +294,43 @@
       <div data-reveal>
         <p class="kicker" data-i18n="pmb.brochureK">Brosur dan informasi biaya</p>
         <h2 data-i18n="pmb.brochureT">Brosur dan rincian biaya selama kuliah</h2>
-        <p data-i18n="pmb.brochureP">Beranda resmi menampilkan brosur dan rincian biaya. Di prototipe ini, rentang biaya daftar yang dipublikasikan ditampilkan di bawah.</p>
-        <table class="fee-table active">
-          <thead>
-            <tr>
-              <th data-i18n="pmb.feeCol1">Sistem kuliah</th>
-              <th data-i18n="pmb.feeCol2">Biaya daftar</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-i18n="pmb.sysPagi">Reguler Pagi Denpasar (A)</td>
-              <td data-i18n="pmb.feePagiShort">Rp 350.000 – Rp 7.800.000</td>
-            </tr>
-            <tr>
-              <td data-i18n="pmb.sysSoreD">Reguler Sore Denpasar (A)</td>
-              <td data-i18n="pmb.feeSoreShort">Rp 350.000 – Rp 8.300.000</td>
-            </tr>
-            <tr>
-              <td data-i18n="pmb.sysSoreG">Reguler Sore Gianyar (B)</td>
-              <td data-i18n="pmb.feeSoreShort">Rp 350.000 – Rp 8.300.000</td>
-            </tr>
-            <tr>
-              <td>RPL</td>
-              <td data-i18n="pmb.feeSoreShort">Rp 350.000 – Rp 8.300.000</td>
-            </tr>
-          </tbody>
-        </table>
+        <p>Dua komponen terpisah: biaya pendaftaran (rentang dari portal resmi) dan SPP semester (menunggu angka Admisi).</p>
+        <div class="fee-split">
+          <article>
+            <h3>Biaya pendaftaran</h3>
+            <p>Reguler Pagi Denpasar: Rp 350.000 – Rp 7.800.000</p>
+            <p>Reguler Sore Denpasar / Gianyar / RPL: Rp 350.000 – Rp 8.300.000</p>
+          </article>
+          <article>
+            <h3>Biaya masuk / SPP semester</h3>
+            <p>TODO: tabel SPP per program dan sistem kuliah dari Bagian Admisi — sel di bawah belum diisi angka.</p>
+          </article>
+        </div>
+        <div class="table-wrap">
+          <table class="fee-table active">
+            <caption>SPP semester per program dan sistem kuliah</caption>
+            <thead>
+              <tr>
+                <th>Program</th>
+                <th>Reguler Pagi Denpasar</th>
+                <th>Reguler Sore Gianyar</th>
+                <th>Reguler Sore Denpasar</th>
+                <th>RPL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Arsitektur</td><td>TODO: SPP Arsitektur Pagi Denpasar</td><td>TODO: SPP Arsitektur Sore Gianyar</td><td>TODO: SPP Arsitektur Sore Denpasar</td><td>TODO: SPP Arsitektur RPL</td></tr>
+              <tr><td>Teknik Sipil</td><td>TODO: SPP Teknik Sipil Pagi Denpasar</td><td>TODO: SPP Teknik Sipil Sore Gianyar</td><td>TODO: SPP Teknik Sipil Sore Denpasar</td><td>TODO: SPP Teknik Sipil RPL</td></tr>
+              <tr><td>Profesi Insinyur</td><td>TODO: SPP Profesi Insinyur Pagi Denpasar</td><td>TODO: SPP Profesi Insinyur Sore Gianyar</td><td>TODO: SPP Profesi Insinyur Sore Denpasar</td><td>TODO: SPP Profesi Insinyur RPL</td></tr>
+              <tr><td>Manajemen</td><td>TODO: SPP Manajemen Pagi Denpasar</td><td>TODO: SPP Manajemen Sore Gianyar</td><td>TODO: SPP Manajemen Sore Denpasar</td><td>TODO: SPP Manajemen RPL</td></tr>
+              <tr><td>Hukum</td><td>TODO: SPP Hukum Pagi Denpasar</td><td>TODO: SPP Hukum Sore Gianyar</td><td>TODO: SPP Hukum Sore Denpasar</td><td>TODO: SPP Hukum RPL</td></tr>
+              <tr><td>Administrasi Publik</td><td>TODO: SPP Administrasi Publik Pagi Denpasar</td><td>TODO: SPP Administrasi Publik Sore Gianyar</td><td>TODO: SPP Administrasi Publik Sore Denpasar</td><td>TODO: SPP Administrasi Publik RPL</td></tr>
+              <tr><td>Magister Hukum</td><td>TODO: SPP Magister Hukum Pagi Denpasar</td><td>TODO: SPP Magister Hukum Sore Gianyar</td><td>TODO: SPP Magister Hukum Sore Denpasar</td><td>TODO: SPP Magister Hukum RPL</td></tr>
+              <tr><td>Magister Administrasi Publik</td><td>TODO: SPP Magister Administrasi Publik Pagi Denpasar</td><td>TODO: SPP Magister Administrasi Publik Sore Gianyar</td><td>TODO: SPP Magister Administrasi Publik Sore Denpasar</td><td>TODO: SPP Magister Administrasi Publik RPL</td></tr>
+              <tr><td>Magister Manajemen Inovasi</td><td>TODO: SPP Magister Manajemen Inovasi Pagi Denpasar</td><td>TODO: SPP Magister Manajemen Inovasi Sore Gianyar</td><td>TODO: SPP Magister Manajemen Inovasi Sore Denpasar</td><td>TODO: SPP Magister Manajemen Inovasi RPL</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <aside class="contact-card" data-reveal>
         <h3 data-i18n="pmb.infoK">Informasi dan pengumuman</h3>
@@ -313,18 +339,90 @@
     </div>
   </section>
 
+  <section id="faq">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <p class="kicker">FAQ pendaftaran</p>
+        <h2>Pertanyaan yang sering muncul sebelum bayar</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>Apakah biaya kuliah bisa dicicil?</summary>
+          <p>TODO: opsi cicilan / angsuran dari Bagian Admisi. Jangan menganggap semua program bisa dicicil sebelum ada kebijakan tertulis.</p>
+        </details>
+        <details>
+          <summary>Ada beasiswa?</summary>
+          <p>TODO: daftar beasiswa yang sedang dibuka, syarat, dan tautan formulir dari Bagian Admisi / Kemahasiswaan.</p>
+        </details>
+        <details>
+          <summary>Berapa lama verifikasi berkas?</summary>
+          <p>TODO: SLA verifikasi berkas (hari kerja) dari Bagian Admisi.</p>
+        </details>
+        <details>
+          <summary>Dokumen apa yang wajib diunggah?</summary>
+          <p>TODO: daftar dokumen wajib per jalur (S1, Profesi, S2, RPL) dari Bagian Admisi.</p>
+        </details>
+        <details>
+          <summary>Boleh ganti program setelah mendaftar?</summary>
+          <p>TODO: aturan pindah program setelah registrasi dari Bagian Admisi. Jangan dijawab ya/tidak tanpa kebijakan resmi.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="duta" class="duta-block">
+    <div class="container">
+      <p class="kicker">Rekrutmen Duta UNR</p>
+      <h2>Mahasiswa aktif, semester 2–6, tanpa biaya pendaftaran</h2>
+      <p>TODO: confirm number of open positions with UNR</p>
+      <div class="duta-meta">
+        <div>
+          <h3>Jadwal tetap</h3>
+          <ul>
+            <li>Pendaftaran dibuka 5 Oktober 2026</li>
+            <li>Pendaftaran ditutup 19 Oktober 2026, 23:59 WIB</li>
+            <li>Wawancara 20–23 Oktober 2026</li>
+            <li>Pengumuman 26 Oktober 2026</li>
+            <li>Orientasi 27–31 Oktober 2026</li>
+            <li>Masa tugas dimulai 1 November 2026</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Syarat</h3>
+          <ul>
+            <li>Mahasiswa aktif UNR, semester 2 sampai 6</li>
+            <li>IPK minimal 3.00</li>
+            <li>Berdomisili di Bali</li>
+            <li>Memiliki akun Instagram yang aktif</li>
+            <li>Sanggup mengikuti seluruh tahap seleksi</li>
+            <li>Tidak ada biaya pendaftaran</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Imbalan non-tunai</h3>
+          <ul>
+            <li>Sertifikat, poin kegiatan, dan entri SKPI</li>
+            <li>Surat rekomendasi Wakil Rektor 3</li>
+            <li>Prioritas beasiswa dan merchandise</li>
+          </ul>
+          <p>Tidak dijanjikan: konversi SKS (belum disetujui Senat Akademik), uang tunai, atau jaminan kerja setelah lulus.</p>
+          <p>Rubrik (skala 5.00, lulus 3.00): motivasi &amp; pemahaman UNR 25%, kualitas komunikasi 25%, keterampilan konten 20%, konsistensi 15%, kolaborasi 15%. Dinilai independen oleh satu reviewer Humas dan satu Senior Duta, lalu dirata-rata.</p>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="#duta-form-todo">Lamar Duta UNR</a>
+      <p id="duta-form-todo">TODO: URL formulir aplikasi Duta UNR dari Humas</p>
+    </div>
+  </section>
+
   <section id="bantuan">
-    <div class="container pmb-help" data-reveal>
-      <div>
-        <p class="kicker" data-i18n="pmb.helpK">Butuh bantuan?</p>
-        <h2 data-i18n="pmb.helpT">Tim PMB siap menjawab pertanyaan pendaftaran</h2>
-        <p data-i18n="pmb.helpP">Hubungi WhatsApp PMB, telepon kampus, atau buka halaman kontak.</p>
-      </div>
-      <div class="pmb-help-actions">
-        <a class="btn btn-primary" href="https://wa.me/6282144011300?text=Saya%20tanya%20terkait%20pendaftaran" target="_blank" rel="noopener" data-i18n="pmb.wa">WhatsApp PMB</a>
-        <a class="btn btn-secondary" href="tel:+62361462617">(0361) 462617</a>
-        <a class="btn btn-ghost" href="kontak.html" data-i18n="pmb.contactPage">Halaman kontak</a>
-      </div>
+    <div class="container" data-reveal>
+      <p class="kicker" data-i18n="pmb.helpK">Butuh bantuan?</p>
+      <h2 data-i18n="pmb.helpT">Tim PMB siap menjawab pertanyaan pendaftaran</h2>
+      <p class="admit-contact">
+        <strong>Kontak admisi</strong> — TODO: nama petugas yang harus disebut Bagian Admisi.
+        <a href="https://wa.me/6282144011300?text=Saya%20tanya%20terkait%20pendaftaran" target="_blank" rel="noopener">WhatsApp PMB</a>
+        <a href="mailto:info@unr.ac.id">info@unr.ac.id</a>
+      </p>
     </div>
   </section>
 </main>

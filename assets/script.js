@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initLightbox();
   initContactForm();
+  initStudyForm();
   initPmbFinder();
   initPmbLogin();
   initPmbApply();
@@ -41,6 +42,15 @@ function wrapHeroWords(text) {
 }
 
 function applyLang(lang) {
+  const page = document.body?.getAttribute('data-page');
+  if (page === 'study') {
+    document.documentElement.lang = 'en';
+    return;
+  }
+  if (page === 'study-id') {
+    document.documentElement.lang = 'id';
+    return;
+  }
   const dict = (window.UNR_I18N && window.UNR_I18N[lang]) || window.UNR_I18N.id;
   document.documentElement.lang = lang === 'en' ? 'en' : 'id';
   try { localStorage.setItem('unr-lang', lang); } catch (_) {}
@@ -245,6 +255,15 @@ function initCountdowns() {
     const secEl = timer.querySelector('[data-unit="seconds"] .n');
     const endedNote = timer.parentElement?.querySelector('[data-countdown-ended]');
 
+    if (Number.isNaN(targetDate.getTime())) {
+      timer.hidden = true;
+      if (endedNote) {
+        endedNote.hidden = false;
+        endedNote.textContent = endedNote.textContent || 'Jadwal menunggu konfirmasi.';
+      }
+      return;
+    }
+
     const tick = () => {
       const now = new Date();
       let diff = Math.max(0, targetDate - now);
@@ -261,12 +280,19 @@ function initCountdowns() {
       if (minEl) minEl.textContent = String(minutes).padStart(2, '0');
       if (secEl) secEl.textContent = String(seconds).padStart(2, '0');
 
-      if (endedNote && targetDate - now <= 0) {
-        endedNote.hidden = false;
+      if (targetDate - now <= 0) {
+        timer.hidden = true;
+        timer.setAttribute('aria-hidden', 'true');
+        if (endedNote) endedNote.hidden = false;
+        const banner = timer.closest('.countdown-banner');
+        if (banner) banner.classList.add('is-ended');
+        return;
       }
     };
     tick();
-    setInterval(tick, 1000);
+    if (targetDate - new Date() > 0) {
+      setInterval(tick, 1000);
+    }
   });
 }
 
@@ -526,6 +552,25 @@ function initContactForm() {
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nTopic: ${topic}\n\n${message}`);
     window.location.href = `mailto:info@unr.ac.id?subject=${subject}&body=${body}`;
     const status = form.querySelector('[data-form-status]');
+    if (status) status.hidden = false;
+  });
+}
+
+function initStudyForm() {
+  const form = document.querySelector('[data-study-form]');
+  if (!form) return;
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    if (!form.consent?.checked) return;
+    const name = (form.name?.value || '').trim();
+    const email = (form.email?.value || '').trim();
+    const country = (form.country?.value || '').trim();
+    const programme = (form.programme?.value || '').trim();
+    const message = (form.message?.value || '').trim();
+    const subject = encodeURIComponent(`[UNR Study in Bali] ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nCountry: ${country}\nProgramme: ${programme}\nConsent: transfer to Indonesia acknowledged\n\n${message}`);
+    window.location.href = `mailto:info@unr.ac.id?subject=${subject}&body=${body}`;
+    const status = form.querySelector('[data-study-status]');
     if (status) status.hidden = false;
   });
 }
