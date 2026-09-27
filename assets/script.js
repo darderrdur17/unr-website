@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonials();
   initMobileNav();
   initLightbox();
+  initAccreditation();
   initContactForm();
   initStudyForm();
   initPmbFinder();
@@ -536,6 +537,29 @@ function initBackToTop() {
   window.addEventListener('scroll', onScroll, { passive: true });
   btn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+  });
+}
+
+function initAccreditation() {
+  const cfg = window.UNR_CONFIG || {};
+  const sk = String(cfg.accreditationSk || '').trim();
+  const expiry = String(cfg.accreditationExpiry || '').trim();
+  const slots = document.querySelectorAll('[data-accreditation]');
+  if (!sk || !expiry) {
+    slots.forEach((el) => { el.hidden = true; });
+    return;
+  }
+  const grade = 'Baik Sekali';
+  const note = grade + ' · SK No. ' + sk + ' · berlaku hingga ' + expiry;
+  slots.forEach((el) => {
+    el.hidden = false;
+    const gradeEl = el.querySelector('[data-acc-grade]');
+    const metaEl = el.querySelector('[data-acc-meta]');
+    const noteEl = el.querySelector('[data-acc-note]');
+    if (gradeEl) gradeEl.textContent = grade;
+    if (metaEl) metaEl.textContent = 'SK No. ' + sk + ' · berlaku hingga ' + expiry;
+    if (noteEl) noteEl.textContent = note + '. Badan hukum penyelenggara: Yayasan Jagadhita Denpasar.';
+    if (el.hasAttribute('data-acc-footer')) el.textContent = note;
   });
 }
 

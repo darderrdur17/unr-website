@@ -164,9 +164,9 @@
         <span class="stat-number">2.4 ha</span>
         <div class="stat-label" data-i18n="stat.a">Luas kampus Penatih</div>
       </div>
-      <div>
-        <span class="stat-number">Baik Sekali</span>
-        <div class="stat-label" data-i18n="stat.acc">Akreditasi institusi BAN-PT (2022)</div>
+      <div data-accreditation hidden>
+        <span class="stat-number" data-acc-grade></span>
+        <div class="stat-label" data-acc-meta></div>
       </div>
     </div>
   </section>
@@ -553,7 +553,7 @@
     </div>
     <div class="footer-bottom">
       <span>© <span data-year>2026</span> Universitas Ngurah Rai. <span class="footer-sig" data-i18n="foot.sig">Berani. Seimbang.</span> <span data-i18n="foot.copy">Prototipe desain berdasarkan informasi dan foto resmi unr.ac.id.</span></span>
-      <span data-i18n="foot.acc">Akreditasi institusi Baik Sekali · BAN-PT 2022</span>
+      <span data-accreditation hidden data-acc-footer></span>
     </div>
   </div>
 </footer>
@@ -563,6 +563,7 @@
 </a>
 <button class="back-to-top" type="button" aria-label="Kembali ke atas" data-i18n-aria="cta.top">↑</button>
 
+<script src="assets/config.js"></script>
 <script src="assets/i18n.js"></script>
 <script src="assets/script.js"></script>
 </body>
