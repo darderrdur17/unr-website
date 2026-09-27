@@ -1108,6 +1108,11 @@ section { padding: var(--space-6) 0; }
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   background: var(--paper);
+  touch-action: pan-y;
+  outline: none;
+}
+.slider:focus-visible {
+  box-shadow: 0 0 0 3px var(--navy);
 }
 .slider-track {
   display: flex;
